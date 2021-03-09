@@ -189,7 +189,8 @@ namespace Accord.Statistics.Testing
                 throw new ArgumentNullException("matrix");
 
 
-            int df = (matrix.NumberOfClasses - 1) * (matrix.NumberOfClasses - 1);
+            // (BEFORE CHANGE) int df = (matrix.NumberOfClasses - 1) * (matrix.NumberOfClasses - 1);
+            int df = (matrix.RowTotals - 1) * (matrix.ColumnTotals - 1);
 
             int[] row = matrix.RowTotals;
             int[] col = matrix.ColumnTotals;
